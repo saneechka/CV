@@ -1,0 +1,271 @@
+\documentclass[10pt, letterpaper]{article}
+
+
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={My CV},
+    pdfauthor={Alex},
+    pdfcreator={LaTeX },
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+
+    -1pt
+}{
+
+    0.3 cm
+}{
+
+    0.2 cm
+}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+
+
+
+
+\let\hrefWithoutArrow\href
+
+
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Aleksandr Zagreshchenko}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}minsk}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{alexandro21mail@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}alexandro21mail@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tg:+@bellimatita}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}tg:@bellimatita}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+
+        \kern 0.25 cm%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/saneechka}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}saneechka}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/yourusername}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}saneechka}}%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+
+\section{Summary}{
+ Software developer with hands-on experience in building and maintaining scalable, high-performance backend systems using Golang. Proficient in designing microservices architecture, optimizing performance, and solving complex software challenges. Strong foundation in cloud technologies, containerization, and distributed systems. Enthusiastic about learning new technologies and improving code efficiency while adhering to best development practices.
+}
+    \section{Education}
+
+
+
+
+        \begin{twocolentry}{
+
+
+        \textit{2023-2027}}
+            \textbf{Belarusian State University of Informatics and Radioelectronics}
+
+            \textit{Faculty of Computer Systems and Networks, Computer Science and Software Technology}
+        \end{twocolentry}
+
+
+
+
+
+
+    \section{Experience}
+
+
+
+
+        \begin{twocolentry}{
+
+
+        \textit{Jule 2023-September 2024}}
+            \textbf{Software Engineer}
+
+            \textit{SysInformarics}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Worked in team  focused of Cloud Infastructure
+                \item Solved some runtime optimization problems
+                \item Devepment high-load microservices
+            \end{highlights}
+        \end{onecolentry}
+
+
+
+
+
+
+
+
+
+    \section{Technologies}
+
+
+
+
+        \begin{onecolentry}
+            \textbf{Languages:} Golang , C++
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+
+    \begin{onecolentry}
+            \textbf{Developers Tools:} Gin,  Gorilla,  GRPC,  Fiber, Echo, GoogleTest,  Kafka,  Kubernetes, Graphana
+        \end{onecolentry}
+    \vspace{0.2 cm}
+        \begin{onecolentry}
+        \textbf{Frameworks&Libraries:} Git,Bash,Linux,Docker,  SSH CMake
+        \end{onecolentry}
+  \vspace{0.2 cm}
+
+
+
+
+   \begin{onecolentry}
+            \textbf{DataBases:} MySQl,PostgreSQL
+        \end{onecolentry}
+\vspace{0.2cm
+}
+     \begin{onecolentry}
+        \textbf{Math}{ Linear Algebra, Graphs theory,Discrete math, Probability theory, Theory of algorithms
+        \end{onecolentry}
+  \vspace{0.2 cm}
+         \begin{onecolentry}
+        \textbf{English}{   B2}
+        \end{onecolentry}
+
+  \vspace{0.2 cm}
+
+\end{document}
