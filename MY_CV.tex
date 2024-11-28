@@ -1,6 +1,5 @@
 \documentclass[10pt, letterpaper]{article}
 
-
 \usepackage[
     ignoreheadfoot,
     top=2 cm,
@@ -8,7 +7,6 @@
     left=2 cm,
     right=2 cm,
     footskip=1.0 cm,
-
 ]{geometry}
 \usepackage{titlesec}
 \usepackage{tabularx}
@@ -19,9 +17,9 @@
 \usepackage{fontawesome5}
 \usepackage{amsmath}
 \usepackage[
-    pdftitle={My CV},
-    pdfauthor={Alex},
-    pdfcreator={LaTeX },
+    pdftitle={myCv CV},
+    pdfauthor={Alexandro},
+    pdfcreator={LaTeX with alexCV},
     colorlinks=true,
     urlcolor=primaryColor
 ]{hyperref}
@@ -32,19 +30,15 @@
 \usepackage{changepage}
 \usepackage{paracol}
 \usepackage{ifthen}
-\
+\usepackage{needspace}
 \usepackage{iftex}
 
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
-
     \usepackage[utf8]{inputenc}
     \usepackage{lmodern}
 \fi
-
-
-
 
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt}
 \pagestyle{empty}
@@ -54,22 +48,17 @@
 \setlength{\columnsep}{0cm}
 \makeatletter
 \let\ps@customFooterStyle\ps@plain
-\patchcmd{\ps@customFooterStyle}{\thepage}{
-
-}{}{}
+\patchcmd{\ps@customFooterStyle}{\thepage}{}{}{}
 \makeatother
 \pagestyle{customFooterStyle}
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
 \titlespacing{\section}{
-
     -1pt
 }{
-
     0.3 cm
 }{
-
     0.2 cm
 }
 
@@ -98,7 +87,6 @@
     \end{itemize}
 }
 
-
 \newenvironment{onecolentry}{
     \begin{adjustwidth}{
         0.2 cm + 0.00001 cm
@@ -126,15 +114,8 @@
     \par\kern\topsep
 }
 
-
-
-
-
 \let\hrefWithoutArrow\href
-
-
 \renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
-
 
 \begin{document}
     \newcommand{\AND}{\unskip
@@ -144,128 +125,103 @@
     \newsavebox\ANDbox
     \sbox\ANDbox{}
 
-
     \begin{header}
-        \textbf{\fontsize{24 pt}{24 pt}\selectfont Aleksandr Zagreshchenko}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Alexandro Zagreshchenko}
 
         \vspace{0.3 cm}
 
         \normalsize
-        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}minsk}%
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Minsk}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{alexandro21mail@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}alexandro21mail@gmail.com}}%
+        \mbox{\hrefWithoutArrow{mailto:youremail@yourdomain.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}alexandro21mail@gmail.com}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{tg:+@bellimatita}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}tg:@bellimatita}}%
+        \mbox{\hrefWithoutArrow{tel:+90-541-999-99-99}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}tg:@bellimatita}}%
         \kern 0.25 cm%
         \AND%
-        \kern 0.25 cm%
-
-        \kern 0.25 cm%
-        \kern 0.25 cm%
         \mbox{\hrefWithoutArrow{https://linkedin.com/in/saneechka}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}saneechka}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://github.com/yourusername}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}saneechka}}%
+        \mbox{\hrefWithoutArrow{https://github.com/saneechka}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}saneechka}}%
     \end{header}
 
     \vspace{0.3 cm - 0.3 cm}
 
+\section{Summary}
+Software developer with hands-on experience in building and maintaining scalable, high-performance backend systems using Golang. Proficient in designing microservices architecture, optimizing performance, and solving complex software challenges. Strong foundation in cloud technologies, containerization, and distributed systems. Enthusiastic about learning new technologies and improving code efficiency while adhering to best development practices.
 
-\section{Summary}{
- Software developer with hands-on experience in building and maintaining scalable, high-performance backend systems using Golang. Proficient in designing microservices architecture, optimizing performance, and solving complex software challenges. Strong foundation in cloud technologies, containerization, and distributed systems. Enthusiastic about learning new technologies and improving code efficiency while adhering to best development practices.
-}
-    \section{Education}
+\section{Education}
+\begin{twocolentry}{\textit{2023-present}}
+    \textbf{Belarusian State University of Informatics and Radioelectronics} \\
+    \textit{Faculty of Computer Systems and Networks,Computer Science and Software Technology}
+\end{twocolentry}
 
+\section{Experience}
+\begin{twocolentry}{\textit{July 2023-September 2024}}
+    \textbf{Software Engineer}
 
+    \textit{SysInformarics}
+\end{twocolentry}
 
+\vspace{0.10cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Worked in a team focused on Cloud Infrastructure
+        \item Solved runtime optimization problems
+        \item Developed high-load microservices
+    \end{highlights}
+\end{onecolentry}
 
-        \begin{twocolentry}{
+\section{Technologies}
 
+\begin{onecolentry}
+    \textbf{Languages:} Golang, C++
+\end{onecolentry}
 
-        \textit{2023-2027}}
-            \textbf{Belarusian State University of Informatics and Radioelectronics}
+\vspace{0.2cm}
 
-            \textit{Faculty of Computer Systems and Networks, Computer Science and Software Technology}
-        \end{twocolentry}
+\begin{onecolentry}
+    \textbf{Frameworks \& Libraries:} Gin, Gorilla, GRPC, Fiber, GoogleTest, Kafka, Kubernetes, Grafana,ElasticSearch
+\end{onecolentry}
 
+\vspace{0.2cm}
 
+\begin{onecolentry}
+    \textbf{Developer Tools:} Git, Bash, Linux, Docker, SSH, CMake
+\end{onecolentry}
 
+\vspace{0.2cm}
 
+\begin{onecolentry}
+    \textbf{Databases:} MySQL, PostgreSQL
+\end{onecolentry}
 
+\vspace{0.2cm}
 
-    \section{Experience}
+\begin{onecolentry}
+    \textbf{Math:} Linear Algebra, Graph Theory, Discrete Math, Probability Theory, Theory of Algorithms
+\end{onecolentry}
 
+\vspace{0.2cm}
 
+\begin{onecolentry}
+    \textbf{English:} B2
+\end{onecolentry}
 
+\vspace{0.2cm}
 
-        \begin{twocolentry}{
-
-
-        \textit{Jule 2023-September 2024}}
-            \textbf{Software Engineer}
-
-            \textit{SysInformarics}
-        \end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Worked in team  focused of Cloud Infastructure
-                \item Solved some runtime optimization problems
-                \item Devepment high-load microservices
-            \end{highlights}
-        \end{onecolentry}
-
-
-
-
-
-
-
-
-
-    \section{Technologies}
-
-
-
-
-        \begin{onecolentry}
-            \textbf{Languages:} Golang , C++
-        \end{onecolentry}
-
-        \vspace{0.2 cm}
-
-
-    \begin{onecolentry}
-            \textbf{Developers Tools:} Gin,  Gorilla,  GRPC,  Fiber, Echo, GoogleTest,  Kafka,  Kubernetes, Graphana
-        \end{onecolentry}
-    \vspace{0.2 cm}
-        \begin{onecolentry}
-        \textbf{Frameworks&Libraries:} Git,Bash,Linux,Docker,  SSH CMake
-        \end{onecolentry}
-  \vspace{0.2 cm}
+\section{Achievement}{
 
 
+\vspace{0.10cm}
 
+\begin{onecolentry} \begin{highlights} \begin{twocolentry}{\textit{Participant}} \textbf{18th International Zhautykov Olympiad} \end{twocolentry} \end{highlights} \end{onecolentry}
 
-   \begin{onecolentry}
-            \textbf{DataBases:} MySQl,PostgreSQL
-        \end{onecolentry}
-\vspace{0.2cm
-}
-     \begin{onecolentry}
-        \textbf{Math}{ Linear Algebra, Graphs theory,Discrete math, Probability theory, Theory of algorithms
-        \end{onecolentry}
-  \vspace{0.2 cm}
-         \begin{onecolentry}
-        \textbf{English}{   B2}
-        \end{onecolentry}
+\vspace{0.10cm}
 
-  \vspace{0.2 cm}
-
+\begin{onecolentry} \begin{highlights} \begin{twocolentry}{\textit{Third Diploma}} \textbf{2024 ICPC Belarus Regional Contest} \end{twocolentry} \end{highlights} \end{onecolentry}
 \end{document}
